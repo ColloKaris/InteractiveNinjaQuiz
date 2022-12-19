@@ -21,6 +21,13 @@ form.addEventListener('submit', (e) => {
         }
     });
     
+    //scrollTo(0,0);
+    scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    })
+
     // show result on the page
     result.querySelector('span').textContent = `${score}%`;
 
