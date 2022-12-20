@@ -29,8 +29,31 @@ form.addEventListener('submit', (e) => {
     })
 
     // show result on the page
-    result.querySelector('span').textContent = `${score}%`;
+    
 
     //remove the bootstrap class hiding the result from the page
     result.classList.remove('d-none')
+
+    let output = 0;
+    const timer = setInterval(() => {
+        result.querySelector('span').textContent = `${output}%`;
+        
+        if(output === score){
+            clearInterval(timer);
+        }
+        else{
+            output++;
+        }
+    }, 10);
+
 })
+
+
+let i = 0;
+const timer = setInterval(() => {
+    console.log('hello world')
+    i++;
+    if(i === 5){
+        clearInterval(timer);
+    }
+}, 1000)
